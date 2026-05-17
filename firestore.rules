@@ -1,0 +1,12 @@
+rules_version = '2';
+// Firestore rules for this project. Deploy with: firebase deploy --only firestore
+// Or copy the rules below into Firebase Console → Firestore → Rules.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Authenticated users can read/write only their own user document (e.g. recentlyViewed)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

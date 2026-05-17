@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sainto.app
+
+# Sitemaps
+Sitemap: https://sainto.app/sitemap.xml
